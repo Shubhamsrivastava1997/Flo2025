@@ -5,44 +5,115 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dynamic Dropdowns</title>
   <style>
+    /* Resetting margins and paddings for consistency */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      padding: 2rem;
-      background: #f4f9f4;
-      color: #2f4f2f;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(145deg, #6e7cfc, #a0b4f7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
     }
+
     .form-section {
-      max-width: 400px;
-      margin: auto;
-      background: #e6f2e6;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      background: #1a1b41;
+      padding: 2rem 3rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 500px;
+      transform: translateY(0);
+      transition: transform 0.3s ease-in-out;
     }
+
+    .form-section:hover {
+      transform: translateY(-10px);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #f0f8ff;
+    }
+
     label {
-      font-weight: bold;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
       display: block;
-      margin-top: 1rem;
+      font-weight: bold;
+      color: #d3d3d3;
     }
+
     select {
       width: 100%;
-      padding: 0.5rem;
-      margin-top: 0.25rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
+      padding: 0.8rem;
+      margin-top: 0.5rem;
+      border-radius: 8px;
+      background: #2f3243;
+      border: 1px solid #505f7b;
+      color: #d1d8e2;
+      font-size: 1rem;
+      transition: border 0.3s ease, background-color 0.3s ease;
     }
+
+    select:focus {
+      border: 1px solid #6e7cfc;
+      background-color: #3e4568;
+      outline: none;
+    }
+
+    select option {
+      background-color: #2f3243;
+      color: #d1d8e2;
+    }
+
     .row {
       display: flex;
-      gap: 1rem;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
     }
+
     .row > div {
       flex: 1;
+    }
+
+    /* Adding button with futuristic hover effect */
+    button {
+      background: #6e7cfc;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      color: white;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      display: block;
+      margin: auto;
+      margin-top: 1.5rem;
+    }
+
+    button:hover {
+      background-color: #4c5cb8;
+      transform: scale(1.05);
+    }
+
+    button:active {
+      transform: scale(1);
     }
   </style>
 </head>
 <body>
 
 <div class="form-section">
+  <h2>Select Your Preferences</h2>
   <!-- First row: Category + Quantity -->
   <div class="row">
     <div>
@@ -80,6 +151,9 @@
       </select>
     </div>
   </div>
+
+  <!-- Submit Button (optional for future enhancements) -->
+  <button>Submit</button>
 </div>
 
 <script>
