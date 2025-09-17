@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Dropdowns</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #f4f9f4;
+      color: #2f4f2f;
+    }
+    .form-section {
+      max-width: 400px;
+      margin: auto;
+      background: #e6f2e6;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 1rem;
+    }
+    select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .row {
+      display: flex;
+      gap: 1rem;
+    }
+    .row > div {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-section">
+  <!-- First row: Category + Quantity -->
+  <div class="row">
+    <div>
+      <label for="category">Category</label>
+      <select id="category">
+        <option value="">--Select--</option>
+        <option value="Fruits">Fruits</option>
+        <option value="Vegetables">Vegetables</option>
+        <option value="Grains">Grains</option>
+      </select>
+    </div>
+    <div>
+      <label for="quantity">Quantity</label>
+      <select id="quantity">
+        <option value="">--Select--</option>
+        <option value="1kg">1 kg</option>
+        <option value="5kg">5 kg</option>
+        <option value="10kg">10 kg</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Second row: two dependent dropdowns -->
+  <div class="row">
+    <div>
+      <label id="dep1-label" for="dep1">Dependent 1</label>
+      <select id="dep1">
+        <option value="">--Select--</option>
+      </select>
+    </div>
+    <div>
+      <label id="dep2-label" for="dep2">Dependent 2</label>
+      <select id="dep2">
+        <option value="">--Select--</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Define picklists for each Category
+  const picklists = {
+    "Fruits": ["Apple", "Banana", "Mango", "Orange"],
+    "Vegetables": ["Carrot", "Spinach", "Potato", "Tomato"],
+    "Grains": ["Rice", "Wheat", "Corn", "Oats"]
+  };
+
+  const category = document.getElementById('category');
+  const dep1Label = document.getElementById('dep1-label');
+  const dep2Label = document.getElementById('dep2-label');
+  const dep1 = document.getElementById('dep1');
+  const dep2 = document.getElementById('dep2');
+
+  category.addEventListener('change', function() {
+    const selectedCategory = category.value;
+
+    // update labels
+    dep1Label.textContent = selectedCategory || "Dependent 1";
+    dep2Label.textContent = selectedCategory || "Dependent 2";
+
+    // update options
+    dep1.innerHTML = `<option value="">--Select--</option>`;
+    dep2.innerHTML = `<option value="">--Select--</option>`;
+    if (picklists[selectedCategory]) {
+      picklists[selectedCategory].forEach(item => {
+        dep1.innerHTML += `<option value="${item}">${item}</option>`;
+        dep2.innerHTML += `<option value="${item}">${item}</option>`;
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
