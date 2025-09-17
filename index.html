@@ -267,6 +267,28 @@
       dependentRow.classList.add('hidden');
     }
   }
+  function syncDropdowns(changedSelect, otherSelect) {
+  const selectedValue = changedSelect.value;
+
+  // Enable all options first
+  Array.from(otherSelect.options).forEach(opt => {
+    opt.disabled = false;
+  });
+
+  // Disable selected value in the other dropdown
+  if (selectedValue) {
+    const optionToDisable = Array.from(otherSelect.options).find(opt => opt.value === selectedValue);
+    if (optionToDisable) optionToDisable.disabled = true;
+  }
+}
+
+dep1.addEventListener('change', () => {
+  syncDropdowns(dep1, dep2);
+});
+
+dep2.addEventListener('change', () => {
+  syncDropdowns(dep2, dep1);
+});
 
   category.addEventListener('change', updateDropdowns);
   quantity.addEventListener('input', updateDropdowns);
