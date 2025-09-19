@@ -1,0 +1,245 @@
+/* ---------------- Reset ---------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------------- Body ---------------- */
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: #0a0a0a;
+  color: #00e0ff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 2rem 1rem;
+}
+
+/* ---------------- Background Image ---------------- */
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('robot.jpg') center/cover no-repeat;
+  opacity: 1;
+  z-index: -1;
+  filter: blur(5px);
+}
+
+/* ---------------- Form Section ---------------- */
+.form-section {
+  background: rgba(20, 20, 30, 0.9);
+  padding: 2.5rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 224, 255, 0.5);
+  width: 90%;
+  max-width: 600px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 2px solid #00e0ff;
+  margin-bottom: 2rem;
+}
+
+.form-section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 40px rgba(0, 224, 255, 0.7);
+}
+
+/* ---------------- Headings ---------------- */
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #00e0ff;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px #00e0ff;
+}
+
+/* ---------------- Labels ---------------- */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #00caff;
+}
+
+label[for="role"] {
+  text-align: center;
+}
+
+/* ---------------- Rows ---------------- */
+.row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.row > .input-group {
+  flex-grow: 1;
+  min-width: 120px;
+}
+
+#category { min-width: 50%; }
+#quantity { width: 100px; color: #00e0ff; text-align: center; font-weight: 600; }
+#role { flex: 0 0 200px; min-width: 250px; max-width: 250px; }
+
+/* ---------------- Inputs ---------------- */
+select,
+input[type="number"] {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #006b8f;
+  background: #1a1a2e;
+  color: #00e0ff;
+  font-size: 0.95rem;
+  outline: none;
+  box-shadow: inset 0 0 10px rgba(0, 224, 255, 0.3);
+  transition: all 0.3s ease;
+  appearance: none;
+}
+
+select:hover,
+select:focus,
+input[type="number"]:hover,
+input[type="number"]:focus {
+  background: #2a2a46;
+  border-color: #00e0ff;
+  box-shadow: 0 0 15px rgba(0, 224, 255, 0.6), inset 0 0 15px rgba(0, 224, 255, 0.4);
+}
+
+option {
+  background-color: #1a1a2e;
+  color: #00e0ff;
+}
+
+/* ---------------- Buttons ---------------- */
+button {
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #00e0ff, #006b8f);
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.5);
+}
+
+button:hover {
+  background: linear-gradient(90deg, #006b8f, #00e0ff);
+  box-shadow: 0 0 30px rgba(0, 224, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+/* ---------------- Section Visibility ---------------- */
+.hidden { display: none; }
+.show { display: block; }
+
+/* ---------------- Input Group with Icon ---------------- */
+.input-group { position: relative; }
+.input-group .icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); }
+.with-icon select,
+.with-icon input[type="number"] { padding-left: 40px; }
+
+/* ---------------- Button Groups ---------------- */
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+#deployBtn { min-width: 180px; }
+#prevBtn, #shareBtn, #backBtn, #copyBtn, #openLinkedInBtn { min-width: 140px; }
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 500px) {
+  .row { flex-direction: column; }
+  .row > div { min-width: 100%; }
+}
+
+/* ---------------- Result Section ---------------- */
+.result {
+  background: rgba(20, 20, 30, 0.9);
+  padding: 0.5rem; /* minimal padding */
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.4);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #0f0;
+  white-space: pre-line;
+  max-height: none; /* natural height */
+  overflow-x: auto; /* horizontal scroll if still needed */
+  width: 100%; /* full width */
+}
+
+/* Table inside Result */
+.result table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0; /* remove extra spacing */
+}
+
+.result table th,
+.result table td {
+  padding: 0.3rem 0.5rem; /* smaller padding to fit */
+  border: 1px solid #00e0ff;
+  text-align: center;
+}
+
+/* ---------------- Share Section ---------------- */
+#share-section {
+  background: rgba(20, 20, 30, 0.9);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.5);
+  color: #0f0;
+  width: 90%;
+  max-width: 600px;
+}
+
+#shareContent {
+  width: 100%;
+  min-height: 150px;
+  background: #1a1a2e;
+  color: #00ff00;
+  border: 1px solid #00e0ff;
+  padding: 1rem;
+  border-radius: 8px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  overflow-y: auto;
+}
+
+/* ---------------- Copy Confirmation Message ---------------- */
+#copyMsg {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0.5rem 1rem;
+  background-color: green;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 700;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.form-section, #share-section {
+  width: 95%;  /* increase max width */
+  max-width: 800px; /* allow more space for table */
+}
