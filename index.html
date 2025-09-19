@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Armona 2-Step Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="bg-image"></div>
+
+  <div class="form-section">
+
+    <h2>Armona</h2>
+
+    <!-- Step 1: Inputs -->
+    <div id="input-section" class="show">
+      <div class="row">
+        <div class="input-group with-icon">
+          <label for="category">Category</label>
+          <select id="category">
+            <option value="">--Select--</option>
+            <option value="Laptop">Laptop</option>
+            <option value="Mobile">Mobile</option>
+            <option value="Hard Disk">Hard Disk</option>
+            <option value="RAM">RAM</option>
+            <option value="Mouse">Mouse</option>
+          </select>
+        </div>
+
+        <div class="input-group with-icon">
+          <label for="role">Role</label>
+          <select id="role">
+            <option value="">--Select--</option>
+            <option value="Developer">Developer</option>
+            <option value="Business Analyst">Business Analyst</option>
+            <option value="Executive">Executive</option>
+          </select>
+        </div>
+
+        <div class="input-group with-icon">
+          <label for="quantity">Quantity</label>
+          <input type="number" id="quantity" placeholder="Qty" min="1" />
+        </div>
+      </div>
+
+      <div class="row" id="dependent-row">
+        <div class="input-group with-icon">
+          <label id="dep1-label" for="dep1">A</label>
+          <select id="dep1">
+            <option value="">--Select--</option>
+          </select>
+        </div>
+        <div class="input-group with-icon">
+          <label id="dep2-label" for="dep2">B</label>
+          <select id="dep2">
+            <option value="">--Select--</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <button type="button" id="deployBtn" style="display:none;">Save Planet</button>
+      </div>
+    </div>
+
+    <!-- Step 2: Result -->
+    <div id="result-section" class="hidden">
+      <div class="result" id="result-text"></div>
+      <div class="btn-group">
+        <button type="button" id="prevBtn">Previous</button>
+        <button type="button" id="shareBtn">Share on LinkedIn</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
