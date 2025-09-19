@@ -1,8 +1,8 @@
 const picklists = {
   "Laptop": {
-    "Developer": ["Dell", "HP", "MacBook Pro"],
-    "Business Analyst": ["Lenovo", "Asus", "HP"],
-    "Executive": ["MacBook", "HP Spectre", "Dell XPS"]
+    "Developer": ["Dell Pro 13 Plus", "HP ZBook", "Apple 14inch MacBook Pro"],
+    "Business Analyst": ["Lenovo Thinkpad", "Asus Ultrabook", "HP Zbook"],
+    "Executive": ["MacBook 13 inch MacBook Pro", "HP Spectre", "Dell XPS"]
   },
   "Mobile": {
     "Developer": ["Pixel", "OnePlus", "iPhone"],
@@ -28,12 +28,12 @@ const picklists = {
 
 const emissionValues = {
   // ---- Laptops ----
-  "MacBook Pro": 271,      // ✅ Actual: Apple 14" MacBook Pro 2021 PER
-  "Dell": 109,              // ✅ Actual: Dell Pro 13 Plus PB13250 PCF report
-  "HP": 120,                // ⚠️ Estimated (typical 13-14" business laptop)
-  "Lenovo": 105,             // ⚠️ Estimated (typical ThinkPad laptop)
-  "Asus": 95,                // ⚠️ Estimated (ultrabook range)
-  "MacBook": 180,            // ✅ Actual: 13" MacBook Pro M1 2020 PER
+  "Apple 14inch MacBook Pro": 271,      // ✅ Actual: Apple 14" MacBook Pro 2021 PER
+  "Dell Pro 13 Plus": 109,              // ✅ Actual: Dell Pro 13 Plus PB13250 PCF report
+  "HP ZBook": 120,                // ⚠️ Estimated (typical 13-14" business laptop)
+  "Lenovo Thinkpad": 105,             // ⚠️ Estimated (typical ThinkPad laptop)
+  "Asus Ultrabook": 95,                // ⚠️ Estimated (ultrabook range)
+  "MacBook 13inch MacBook Pro": 180,            // ✅ Actual: 13" MacBook Pro M1 2020 PER
   "HP Spectre": 125,         // ⚠️ Estimated (thin premium model)
   "Dell XPS": 140,            // ⚠️ Estimated (high performance laptop)
  
