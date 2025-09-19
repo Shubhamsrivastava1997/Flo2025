@@ -27,32 +27,41 @@ const picklists = {
 };
 
 const emissionValues = {
-  "Dell": 50,
-  "HP": 45,
-  "MacBook Pro": 70,
-  "Lenovo": 40,
-  "Asus": 35,
-  "MacBook": 60,
-  "HP Spectre": 55,
-  "Dell XPS": 65,
-  "Pixel": 30,
-  "OnePlus": 25,
-  "iPhone": 40,
-  "Samsung": 35,
-  "Xiaomi": 20,
-  "Samsung Fold": 45,
-  "Seagate": 15,
-  "WD": 10,
-  "Toshiba": 20,
-  "ADATA": 12,
-  "Corsair": 8,
-  "Kingston": 10,
-  "G.Skill": 9,
-  "Crucial": 7,
-  "HyperX": 11,
-  "Logitech": 5,
-  "Razer": 6,
-  "SteelSeries": 7
+  // ---- Laptops ----
+  "MacBook Pro": 271,      // ✅ Actual: Apple 14" MacBook Pro 2021 PER
+  "Dell": 109,              // ✅ Actual: Dell Pro 13 Plus PB13250 PCF report
+  "HP": 120,                // ⚠️ Estimated (typical 13-14" business laptop)
+  "Lenovo": 105,             // ⚠️ Estimated (typical ThinkPad laptop)
+  "Asus": 95,                // ⚠️ Estimated (ultrabook range)
+  "MacBook": 180,            // ✅ Actual: 13" MacBook Pro M1 2020 PER
+  "HP Spectre": 125,         // ⚠️ Estimated (thin premium model)
+  "Dell XPS": 140,            // ⚠️ Estimated (high performance laptop)
+ 
+  // ---- Smartphones ----
+  "iPhone": 65,               // ✅ Actual: iPhone 14 ~65 kg CO₂e (Apple PER)
+  "Pixel": 70,                 // ⚠️ Estimated (based on Pixel 7 class)
+  "OnePlus": 60,               // ⚠️ Estimated
+  "Samsung": 55,               // ⚠️ Estimated (Galaxy S series average)
+  "Xiaomi": 45,                 // ⚠️ Estimated
+  "Samsung Fold": 85,           // ⚠️ Estimated (larger foldable)
+ 
+  // ---- Hard Disks ----
+  "Seagate": 40,               // ⚠️ Estimated (2.5" HDD typical)
+  "WD": 35,                    // ⚠️ Estimated
+  "Toshiba": 38,                // ⚠️ Estimated
+  "ADATA": 25,                  // ⚠️ Estimated (SSD lower impact)
+ 
+  // ---- RAM ----
+  "Corsair": 15,                 // ⚠️ Estimated
+  "Kingston": 15,                // ⚠️ Estimated
+  "G.Skill": 14,                  // ⚠️ Estimated
+  "Crucial": 14,                  // ⚠️ Estimated
+  "HyperX": 16,                   // ⚠️ Estimated
+ 
+  // ---- Mouse ----
+  "Logitech": 5,                   // ⚠️ Estimated (light peripheral)
+  "Razer": 7,                      // ⚠️ Estimated
+  "SteelSeries": 6                 // ⚠️ Estimated
 };
 
 const category = document.getElementById('category');
