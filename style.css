@@ -243,3 +243,11 @@ button:hover {
   width: 95%;  /* increase max width */
   max-width: 800px; /* allow more space for table */
 }
+/* No extra CSS needed since #ecoIdeaSection uses .form-section */
+/* But to ensure proper centering and spacing inline: */
+
+#ecoIdeaSection {
+  margin: 2rem auto;
+  max-width: 600px;
+  width: 90%;
+}
