@@ -341,3 +341,121 @@ openLinkedInBtn.addEventListener('click', () => {
   const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://yourwebsite.com')}`;
   window.open(linkedInUrl, '_blank', 'width=600,height=600');
 });
+// ECO Idea link click opens new tab with single input form
+document.getElementById('ecoIdeaLink').addEventListener('click', (e) => {
+  e.preventDefault();
+
+  const ecoPageHTML = `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>ECO Idea</title>
+      <style>
+        body {
+          font-family: 'Orbitron', sans-serif;
+          background: #0a0a0a;
+          color: #00e0ff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          padding: 2rem;
+        }
+        .form-section {
+          background: rgba(20, 20, 30, 0.9);
+          padding: 2rem 3rem;
+          border-radius: 15px;
+          box-shadow: 0 0 30px rgba(0, 224, 255, 0.5);
+          width: 90%;
+          max-width: 400px;
+          border: 2px solid #00e0ff;
+          text-align: center;
+        }
+        label {
+          font-weight: 600;
+          font-size: 1.2rem;
+          display: block;
+          margin-bottom: 0.7rem;
+          color: #00caff;
+        }
+        input[type=number] {
+          width: 100%;
+          padding: 0.6rem 1rem;
+          border-radius: 8px;
+          border: 1px solid #006b8f;
+          background: #1a1a2e;
+          color: #00e0ff;
+          font-size: 1.1rem;
+          outline: none;
+          box-shadow: inset 0 0 10px rgba(0, 224, 255, 0.3);
+          transition: all 0.3s ease;
+        }
+        input[type=number]:focus {
+          background: #2a2a46;
+          border-color: #00e0ff;
+          box-shadow: 0 0 15px rgba(0, 224, 255, 0.6), inset 0 0 15px rgba(0, 224, 255, 0.4);
+        }
+        button {
+          margin-top: 1.5rem;
+          padding: 1rem;
+          border: none;
+          border-radius: 10px;
+          background: linear-gradient(90deg, #00e0ff, #006b8f);
+          color: #000;
+          font-size: 1.2rem;
+          font-weight: 700;
+          cursor: pointer;
+          text-transform: uppercase;
+          transition: all 0.3s ease;
+          box-shadow: 0 0 20px rgba(0, 224, 255, 0.5);
+          width: 100%;
+        }
+        button:hover {
+          background: linear-gradient(90deg, #006b8f, #00e0ff);
+          box-shadow: 0 0 30px rgba(0, 224, 255, 0.8);
+          transform: translateY(-2px);
+        }
+        #result {
+          margin-top: 1.5rem;
+          font-weight: 700;
+          color: #00ff00;
+        }
+      </style>
+    </head>
+    <body>
+      <section class="form-section">
+        <h2>ECO Idea</h2>
+        <label for="numLaptop">No of laptop</label>
+        <input type="number" id="numLaptop" min="0" placeholder="Enter quantity" />
+        <button id="calcBtn">Calculate Emission Saved</button>
+        <div id="result"></div>
+      </section>
+      <script>
+        const emissionPerLaptop = 109; // example emission value
+        
+        document.getElementById('calcBtn').addEventListener('click', () => {
+          const qty = parseInt(document.getElementById('numLaptop').value);
+          const resultDiv = document.getElementById('result');
+
+          if (!qty || qty <= 0) {
+            resultDiv.textContent = 'Please enter a valid quantity.';
+            resultDiv.style.color = '#ff3300';
+            return;
+          }
+
+          const totalEmission = qty * emissionPerLaptop;
+          resultDiv.style.color = '#00ff00';
+          resultDiv.textContent = \`Total CO₂ emission for \${qty} laptops: \${totalEmission} units.\`;
+        });
+      </script>
+    </body>
+    </html>
+  `;
+
+  const newWindow = window.open();
+  newWindow.document.write(ecoPageHTML);
+  newWindow.document.close();
+});
