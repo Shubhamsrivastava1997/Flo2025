@@ -211,6 +211,7 @@ function updateResult() {
   // CO2 absorbed per tree per year
   const TREE_CO2_ABSORPTION = 21; 
   const treesEquivalent = emissionSaved / TREE_CO2_ABSORPTION;
+    const gallons = (emissionSaved / 8.887)
 
   lastSavedEmission = emissionSaved;
   lastSelectedA = selectedA;
@@ -259,7 +260,8 @@ function updateResult() {
     <p style="color:#ffffff;">${costLine}</p>
     <p style="margin-top: 0.5rem; font-weight: 700; color: #FFA500; 
       background-color: rgba(255, 165, 0, 0.15); padding: 0.5rem 1rem; border-radius: 8px;">
-      Equivalent to planting approximately ${treesEquivalent.toFixed(2)} trees per year
+      🌳Equivalent to planting approximately ${treesEquivalent.toFixed(2)} trees per year/n
+      ⛽ ${gallons.toFixed(2)} gallons of gasoline not burned
     </p>
   `;
 }
